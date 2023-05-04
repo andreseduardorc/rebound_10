@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="caja1 container">
+        <div id="text1">
+          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, accusantium distinctio accusamus totam rem at ex alias labore veniam aliquam nisi recusandae esse voluptatum culpa veritatis enim porro dolor quis?</p>
+        </div>
+        <div id="text2" style="display: none;">
+          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, accusantium distinctio accusamus totam rem at ex alias labore veniam aliquam nisi recusandae esse voluptatum culpa veritatis enim porro dolor quis?</p>
+        </div>
+        <div id="caja2">
+          <img src="Pac-Man_Cutscene.svg.png" id="img" width="20%" alt="">
+        </div>
+        <div id="caja3">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente laudantium aliquid rem consequatur eius nemo alias provident sunt et voluptate in aut, quas hic quia dolores, corrupti voluptatem reiciendis facere.</p>
+        </div>
+      </div>
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+      <script>
+        $(document).ready(function() {
+          // Mostrar/ocultar el segundo texto al pasar/salir del primer texto
+          $("#text1").hover(function() {
+            $("#text2").show();
+          }, function() {
+            $("#text2").hide();
+          });
+      
+          // Agrandar/reducir la imagen al hacer clic/salir de ella
+          $("#caja2").click(function() {
+            $("#img").animate({width: "40%"}, 500);
+          }).mouseleave(function() {
+            $("#img").animate({width: "20%"}, 500);
+          });
+      
+          // Agrandar el texto al hacer doble clic en él
+          $("#caja3").dblclick(function() {
+            $(this).css("font-size", "20px");
+          });
+        });
+      </script>
+      
+</body>
+</html>
